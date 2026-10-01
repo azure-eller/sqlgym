@@ -1,0 +1,4 @@
+title = "Find telephone numbers with parentheses"
+difficulty = "easy"
+ordered = false
+hint = "Look up the ~ or `SIMILAR TO` operators in the Postgres docs."

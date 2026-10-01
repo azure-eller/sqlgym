@@ -1,0 +1,4 @@
+title = "Rank members by (rounded) hours used"
+difficulty = "medium"
+ordered = true
+hint = "You'll need the `RANK` window function again. You can use integer arithmetic to accomplish rounding."

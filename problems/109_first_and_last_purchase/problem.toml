@@ -1,0 +1,4 @@
+title = "First and last purchase per user"
+difficulty = "medium"
+ordered = false
+hint = "Number each user's orders in both directions with ROW_NUMBER(), or use DuckDB's arg_min/arg_max."

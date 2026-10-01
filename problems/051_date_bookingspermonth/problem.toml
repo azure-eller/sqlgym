@@ -1,0 +1,4 @@
+title = "Return a count of bookings for each month"
+difficulty = "medium"
+ordered = true
+hint = "You're probably going to want the date_trunc function again."

@@ -1,0 +1,4 @@
+title = "Work out the number of seconds between timestamps"
+difficulty = "medium"
+ordered = false
+hint = "You can do this by extracting the epoch from the interval between two timestamps."

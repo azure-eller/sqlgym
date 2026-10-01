@@ -1,0 +1,4 @@
+title = "Calculate a rolling average of total revenue"
+difficulty = "medium"
+ordered = true
+hint = "You'll need to generate a list of days: check out `GENERATE_SERIES` for that. You can then solve this problem using aggregate functions or window functions."

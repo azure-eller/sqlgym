@@ -1,0 +1,4 @@
+title = "List the total slots booked per facility in a given month"
+difficulty = "medium"
+ordered = true
+hint = "You can restrict the data that goes into your aggregate functions using the `WHERE` clause."

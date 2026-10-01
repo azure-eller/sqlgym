@@ -1,0 +1,4 @@
+title = "Simple aggregation"
+difficulty = "easy"
+ordered = false
+hint = "Look up the SQL aggregate function `MAX`"

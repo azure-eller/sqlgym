@@ -1,0 +1,4 @@
+title = "Latest version of each user"
+difficulty = "easy"
+ordered = false
+hint = "ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY updated_at DESC) and keep row 1. DuckDB also has QUALIFY."

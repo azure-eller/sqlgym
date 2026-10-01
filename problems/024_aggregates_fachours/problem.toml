@@ -1,0 +1,4 @@
+title = "List the total slots booked per facility"
+difficulty = "medium"
+ordered = true
+hint = "For this one you'll need to check out the `SUM` aggregate function."

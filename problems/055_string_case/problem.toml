@@ -1,0 +1,4 @@
+title = "Perform a case-insensitive search"
+difficulty = "easy"
+ordered = false
+hint = "Use the `UPPER` function or the `ILIKE` operator."

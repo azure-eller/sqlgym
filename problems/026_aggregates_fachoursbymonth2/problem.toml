@@ -1,0 +1,4 @@
+title = "List the total slots booked per facility per month"
+difficulty = "medium"
+ordered = true
+hint = "Take a look at the `EXTRACT` function."

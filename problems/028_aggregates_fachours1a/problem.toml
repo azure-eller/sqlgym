@@ -1,0 +1,4 @@
+title = "List facilities with more than 1000 slots booked"
+difficulty = "medium"
+ordered = true
+hint = "Try investigating the `HAVING` clause."

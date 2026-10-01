@@ -1,0 +1,4 @@
+title = "Retrieve specific columns from a table"
+difficulty = "easy"
+ordered = false
+hint = "The select statement allows you to specify column names to retrieve."

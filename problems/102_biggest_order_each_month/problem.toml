@@ -1,0 +1,4 @@
+title = "Biggest order each month"
+difficulty = "medium"
+ordered = false
+hint = "Compute order totals first, then RANK() them within each month. `date_trunc` returns a timestamp, so cast it to DATE."

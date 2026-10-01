@@ -1,0 +1,4 @@
+title = "Count the number of facilities"
+difficulty = "medium"
+ordered = false
+hint = "Try investigating the SQL `COUNT` function"

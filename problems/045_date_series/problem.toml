@@ -1,0 +1,4 @@
+title = "Generate a list of all the dates in October 2012"
+difficulty = "medium"
+ordered = false
+hint = "Take a look at Postgres' `GENERATE_SERIES` function"

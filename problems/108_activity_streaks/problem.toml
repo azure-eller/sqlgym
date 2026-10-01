@@ -1,0 +1,4 @@
+title = "Consecutive-day activity streaks"
+difficulty = "hard"
+ordered = false
+hint = "Gaps and islands: take each user's distinct active dates and subtract ROW_NUMBER() days from each. Dates in the same streak end up with the same value."

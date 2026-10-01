@@ -1,0 +1,4 @@
+title = "Lifetime spend after each order"
+difficulty = "medium"
+ordered = false
+hint = "PARTITION BY user_id inside the window so each user's running total starts from zero."

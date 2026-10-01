@@ -1,0 +1,4 @@
+title = "Produce a list of all members, along with their recommender"
+difficulty = "easy"
+ordered = true
+hint = "Try investigating the `LEFT OUTER JOIN`."

@@ -1,0 +1,4 @@
+title = "Find facilities by a name prefix"
+difficulty = "easy"
+ordered = false
+hint = "Use the `LIKE` operator."

@@ -1,0 +1,4 @@
+title = "Running total of daily revenue"
+difficulty = "easy"
+ordered = true
+hint = "Aggregate to one row per day first, then use SUM(...) OVER (ORDER BY day)."

@@ -1,0 +1,4 @@
+title = "Calculate the payback time for each facility"
+difficulty = "medium"
+ordered = true
+hint = "There's no need to use window functions to solve this problem. Hard-code the number of months for an easy time, calculate them for a tougher one."

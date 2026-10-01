@@ -1,0 +1,4 @@
+title = "Count the number of expensive facilities"
+difficulty = "medium"
+ordered = false
+hint = "You'll need to add a `WHERE` clause to the answer of the previous question."

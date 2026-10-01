@@ -1,0 +1,4 @@
+title = "List each member's first booking after September 1st 2012"
+difficulty = "medium"
+ordered = true
+hint = "Take a look at the `MIN` aggregate function"

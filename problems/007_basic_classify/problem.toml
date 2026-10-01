@@ -1,0 +1,4 @@
+title = "Classify results into buckets"
+difficulty = "easy"
+ordered = false
+hint = "Try looking up the SQL `CASE` statement."

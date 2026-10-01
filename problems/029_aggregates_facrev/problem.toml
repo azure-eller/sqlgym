@@ -1,0 +1,4 @@
+title = "Find the total revenue of each facility"
+difficulty = "medium"
+ordered = true
+hint = "Remember the `CASE` statement!"

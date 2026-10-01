@@ -1,0 +1,4 @@
+title = "Produce a list of costly bookings, using a subquery"
+difficulty = "easy"
+ordered = false
+hint = "Your answer will be similar to the referenced exercise. Use a subquery in the `FROM` clause to generate a result set that calculates the total cost of each booking. The outer query can then select the bookings it's interested in."

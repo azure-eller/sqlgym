@@ -1,0 +1,4 @@
+title = "Average days between orders"
+difficulty = "medium"
+ordered = false
+hint = "LAG(order_date) OVER (PARTITION BY user_id ORDER BY ordered_at) gives the previous order. Subtracting two DATEs gives a number of days."

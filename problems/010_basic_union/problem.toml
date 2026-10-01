@@ -1,0 +1,4 @@
+title = "Combining results from multiple queries"
+difficulty = "easy"
+ordered = false
+hint = "Look up the SQL keyword `UNION`"

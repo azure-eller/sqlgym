@@ -1,0 +1,4 @@
+title = "Retrieve the start times of members' bookings"
+difficulty = "easy"
+ordered = false
+hint = "Take a look at the documentation for `INNER JOIN`."

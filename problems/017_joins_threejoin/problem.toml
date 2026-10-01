@@ -1,0 +1,4 @@
+title = "Produce a list of all members who have used a tennis court"
+difficulty = "easy"
+ordered = true
+hint = "This answer requires multiple joins. To concatenate strings you can use the `||` operator."

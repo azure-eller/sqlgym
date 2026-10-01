@@ -1,0 +1,4 @@
+title = "List the total hours booked per named facility"
+difficulty = "medium"
+ordered = true
+hint = "Remember that in Postgres, dividing two integers together causes an integer division. Here you want a floating point division. For formatting the hours, take a look at the `to_char` function, remembering to `trim` any leftover whitespace"

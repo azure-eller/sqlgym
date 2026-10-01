@@ -1,0 +1,4 @@
+title = "Work out the number of days in each month of 2012"
+difficulty = "medium"
+ordered = true
+hint = "Subtracting two timestamps will give you the interval you're looking for. You can use the `EXTRACT` function to get the month from a timestamp."

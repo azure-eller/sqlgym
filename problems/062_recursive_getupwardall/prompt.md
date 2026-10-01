@@ -1,0 +1,1 @@
+Produce a CTE that can return the upward recommendation chain for any member. You should be able to `select recommender from recommenders where member=x`. Demonstrate it by getting the chains for members 12 and 22. Results table should have member and recommender, ordered by member ascending, recommender descending.

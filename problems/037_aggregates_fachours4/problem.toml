@@ -1,0 +1,4 @@
+title = "Output the facility id that has the highest number of slots booked, again"
+difficulty = "medium"
+ordered = false
+hint = "This one's a little bit tough. You'll need the `RANK` window function, and it's worth noting that it's possible to use an aggregate function inside the `ORDER BY` clause of a window function."

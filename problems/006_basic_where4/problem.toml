@@ -1,0 +1,4 @@
+title = "Matching against multiple possible values"
+difficulty = "easy"
+ordered = false
+hint = "Try looking up the SQL `IN` operator."

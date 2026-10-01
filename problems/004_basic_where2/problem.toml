@@ -1,0 +1,4 @@
+title = "Control which rows are retrieved - part 2"
+difficulty = "easy"
+ordered = false
+hint = "The `WHERE` clause allows you to filter the rows that you want to retrieve."

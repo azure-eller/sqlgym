@@ -1,0 +1,4 @@
+title = "Produce a CTE that can return the upward recommendation chain for any member"
+difficulty = "hard"
+ordered = true
+hint = "Your initial statement should return all the recommendedby and memid fields in the members table."

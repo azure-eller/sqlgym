@@ -1,0 +1,4 @@
+title = "Find facilities with a total revenue less than 1000"
+difficulty = "medium"
+ordered = true
+hint = "You may find `HAVING` difficult to use here. Try a subquery instead. You'll probably also need a `CASE` statement."

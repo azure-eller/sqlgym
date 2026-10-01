@@ -1,0 +1,4 @@
+title = "Classify facilities by value"
+difficulty = "medium"
+ordered = true
+hint = "Investigate the `NTILE` window function."

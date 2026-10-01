@@ -1,0 +1,4 @@
+title = "Pad zip codes with leading zeroes"
+difficulty = "easy"
+ordered = true
+hint = "Check out the `LPAD` function. You'll also need to cast the zipcode column to a character string."

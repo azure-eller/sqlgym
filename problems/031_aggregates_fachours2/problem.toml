@@ -1,0 +1,4 @@
+title = "Output the facility id that has the highest number of slots booked"
+difficulty = "medium"
+ordered = true
+hint = "Consider the use of the `LIMIT` keyword combined with `ORDER BY`. For the `LIMIT`-less version, you'll probably want to investigate the `HAVING` keyword. Be aware that the latter version is difficult!"

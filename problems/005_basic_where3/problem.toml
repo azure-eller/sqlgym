@@ -1,0 +1,4 @@
+title = "Basic string searches"
+difficulty = "easy"
+ordered = false
+hint = "Try looking up the SQL `LIKE` operator."

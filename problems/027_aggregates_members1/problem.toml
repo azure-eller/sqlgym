@@ -1,0 +1,4 @@
+title = "Find the count of members who have made at least one booking"
+difficulty = "medium"
+ordered = false
+hint = "Take a look at `COUNT DISTINCT`"

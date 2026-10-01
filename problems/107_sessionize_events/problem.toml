@@ -1,0 +1,4 @@
+title = "Sessionize events with a 30-minute gap"
+difficulty = "hard"
+ordered = false
+hint = "Flag an event as starting a session when the gap from LAG(event_time) is more than 30 minutes (or there is no previous event). A running SUM of that flag numbers the sessions."

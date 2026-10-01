@@ -1,0 +1,4 @@
+title = "Work out the start times of bookings for tennis courts"
+difficulty = "easy"
+ordered = false
+hint = "This is another `INNER JOIN`. You may also want to think about using the `IN` or `LIKE` operators to limit the results you get back."

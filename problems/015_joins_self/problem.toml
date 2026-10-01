@@ -1,0 +1,4 @@
+title = "Produce a list of all members who have recommended another member"
+difficulty = "easy"
+ordered = true
+hint = "This is an `INNER JOIN`, just like the previous exercises."

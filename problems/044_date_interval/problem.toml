@@ -1,0 +1,4 @@
+title = "Subtract timestamps from each other"
+difficulty = "medium"
+ordered = false
+hint = "You can use the '-' symbol on timestamps"

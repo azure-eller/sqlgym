@@ -1,0 +1,4 @@
+title = "Removing duplicates, and ordering results"
+difficulty = "easy"
+ordered = true
+hint = "Look up the SQL keywords `DISTINCT`, `ORDER BY`, and `LIMIT`."

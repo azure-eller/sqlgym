@@ -1,0 +1,4 @@
+title = "Get the day of the month from a timestamp"
+difficulty = "medium"
+ordered = false
+hint = "The easiest way to do this is with the `EXTRACT` function."

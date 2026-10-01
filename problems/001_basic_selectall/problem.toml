@@ -1,0 +1,4 @@
+title = "Retrieve everything from a table"
+difficulty = "easy"
+ordered = false
+hint = "`select * ` can be used to retrieve all columns from a table."

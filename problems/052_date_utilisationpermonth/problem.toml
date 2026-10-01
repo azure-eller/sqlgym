@@ -1,0 +1,4 @@
+title = "Work out the utilisation percentage for each facility by month"
+difficulty = "medium"
+ordered = true
+hint = "Remember different months have different lengths - you'll need to calculate the number of available slots in each month. You need to find a way to retrieve an integer (rather than interval) number of days for the length of the month."

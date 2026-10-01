@@ -1,0 +1,4 @@
+title = "Produce a numbered list of members"
+difficulty = "medium"
+ordered = true
+hint = "Read up on the `ROW_NUMBER` window function."

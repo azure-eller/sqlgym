@@ -1,0 +1,4 @@
+title = "Find the top three revenue generating facilities"
+difficulty = "medium"
+ordered = true
+hint = "Yet another question based on the `RANK` window function! Remember the relative complexity of calculating the revenue of a facility, since you need to count for the different costs for the GUEST user.."

@@ -1,0 +1,4 @@
+title = "Working with dates"
+difficulty = "easy"
+ordered = false
+hint = "Look up the SQL timestamp format, and remember that you can compare dates much like you would integer values."

@@ -1,0 +1,4 @@
+title = "Count the number of recommendations each member makes."
+difficulty = "medium"
+ordered = true
+hint = "Try investigating `GROUP BY` with your count this time. Don't forget to filter out null recommenders!"

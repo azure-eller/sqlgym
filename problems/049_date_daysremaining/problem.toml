@@ -1,0 +1,4 @@
+title = "Work out the number of days remaining in the month"
+difficulty = "medium"
+ordered = false
+hint = "Take a look at the `DATE_TRUNC` function"

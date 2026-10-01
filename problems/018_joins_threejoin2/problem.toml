@@ -1,0 +1,4 @@
+title = "Produce a list of costly bookings"
+difficulty = "easy"
+ordered = false
+hint = "As before, this answer requires multiple joins. It's more complex `WHERE` logic than you're used to, and will require a `CASE` statement in the column selections!"

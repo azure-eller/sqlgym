@@ -1,0 +1,4 @@
+title = "Month-over-month revenue change"
+difficulty = "medium"
+ordered = true
+hint = "Aggregate to one row per month, then LAG(revenue) OVER (ORDER BY month) gives the previous month."

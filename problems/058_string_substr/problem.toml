@@ -1,0 +1,4 @@
+title = "Count the number of members whose surname starts with each letter of the alphabet"
+difficulty = "easy"
+ordered = true
+hint = "You'll need the `SUBSTR` function here, combined with some aggregation."

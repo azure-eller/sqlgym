@@ -1,0 +1,4 @@
+title = "Top 2 products per category, with ties"
+difficulty = "medium"
+ordered = false
+hint = "Rank products within each category with RANK() and keep ranks 1 and 2. RANK (not ROW_NUMBER) gives tied products the same rank."

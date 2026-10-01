@@ -1,0 +1,4 @@
+title = "Produce a list of all members, along with their recommender, using no joins."
+difficulty = "easy"
+ordered = true
+hint = "Answering this question correctly requires the use of a subquery"

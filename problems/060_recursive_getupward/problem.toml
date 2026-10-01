@@ -1,0 +1,4 @@
+title = "Find the upward recommendation chain for member ID 27"
+difficulty = "hard"
+ordered = true
+hint = "Read up on `WITH RECURSIVE`."

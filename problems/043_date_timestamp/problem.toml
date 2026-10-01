@@ -1,0 +1,4 @@
+title = "Produce a timestamp for 1 a.m. on the 31st of August 2012"
+difficulty = "medium"
+ordered = false
+hint = "There's a bunch of ways to do this, but the easiest is probably to look at the `TIMESTAMP` keyword."

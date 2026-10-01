@@ -1,0 +1,4 @@
+title = "Produce a list of member names, with each row containing the total member count"
+difficulty = "medium"
+ordered = true
+hint = "Read up on the `COUNT` window function."
