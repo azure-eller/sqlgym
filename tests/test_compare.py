@@ -2,28 +2,32 @@
 
 from datetime import date
 from decimal import Decimal
+from types import SimpleNamespace
 
-from sqlgym.compare import matches
-
-
-def test_rows_must_match_exactly_ignoring_order():
-    assert matches([(2, "b"), (1, "a")], [(1, "a"), (2, "b")])
-    assert matches([], [])
-    assert not matches([(1, "a"), (3, "c")], [(1, "a"), (2, "b")])  # wrong row
-    assert not matches([(1,)], [(1,), (1,)])  # duplicates count
-    assert not matches([(1, "a", None)], [(1, "a")])  # extra column
+from sqlgym.compare import difference
 
 
-def test_order_matters_only_when_ordered():
-    assert not matches([(2,), (1,)], [(1,), (2,)], ordered=True)
-    assert matches([(1,), (2,)], [(1,), (2,)], ordered=True)
+def diff(yours, expected, ordered=False):
+    """`difference` for bare rows, with columns named a, b, c, …"""
+    result = lambda rows: SimpleNamespace(columns=list("abcdef")[: len(rows[0]) if rows else 1], rows=rows)
+    return difference(result(yours), result(expected), ordered)
+
+
+def test_each_difference_is_named():
+    assert diff([(1, "a"), (2, "b")], [(1, "a"), (2, "b")]) is None
+    assert diff([(1, "a", None)], [(1, "a")]) == "Expected 2 columns, got 3."
+    assert diff([(1,), (1,)], [(1,)]) == "Expected 1 row, got 2."
+    assert diff([(1, "a"), (2, "x")], [(1, "a"), (2, "b")]) == "Wrong values in column b."
+    assert diff([(1, "b"), (2, "a")], [(1, "a"), (2, "b")]) == "Right values, but in the wrong rows."
+    assert diff([(2,), (1,)], [(1,), (2,)]) is None
+    assert diff([(2,), (1,)], [(1,), (2,)], ordered=True) == "Right rows, wrong order."
 
 
 def test_values_compare_loosely_where_sql_would():
-    assert matches([(0.333333333,)], [(1 / 3,)])  # floats rounded to 4 places
-    assert not matches([(1.0002,)], [(1.0,)])
-    assert matches([(Decimal("2.50"), 5)], [(2.5, 5.0)])  # decimal, float and int
-    assert matches([(None, float("nan"))], [(None, float("nan"))])  # NULL = NULL, NaN = NaN
-    assert not matches([(None,)], [(0,)])
-    assert matches([([1, 2], {"a": 1.00001})], [([1, 2], {"a": 1.0})])  # lists and structs
-    assert not matches([("2024-01-01",)], [(date(2024, 1, 1),)])  # no type coercion
+    assert diff([(0.333333333,)], [(1 / 3,)]) is None  # floats rounded to 4 places
+    assert diff([(1.0002,)], [(1.0,)])
+    assert diff([(Decimal("2.50"), 5)], [(2.5, 5.0)]) is None  # decimal, float and int
+    assert diff([(None, float("nan"))], [(None, float("nan"))]) is None  # NULL = NULL, NaN = NaN
+    assert diff([(None,)], [(0,)])
+    assert diff([([1, 2], {"a": 1.00001})], [([1, 2], {"a": 1.0})]) is None  # lists and structs
+    assert diff([("2024-01-01",)], [(date(2024, 1, 1),)])  # no type coercion

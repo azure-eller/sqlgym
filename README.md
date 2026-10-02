@@ -14,7 +14,7 @@ sqlgym check FILE    # check a file's last query from the shell
 
 `sqlgym` opens Neovim with three panes stacked top to bottom: the problem, your
 SQL, and the results. The problem and SQL panes size themselves to fit and the
-results get the rest (`<C-w>j` to move there and scroll).
+results get the rest.
 
 | Key | |
 |---|---|
@@ -22,6 +22,7 @@ results get the rest (`<C-w>j` to move there and scroll).
 | `<leader>n` | next problem (skips this one if unsolved) |
 | `<leader>a` | show the answer |
 | `<leader>R` | redo: clear your SQL (`u` undoes) |
+| `<leader>z` | zoom the results to full screen to scroll a big table; again to go back |
 | `:q` | save and quit |
 
 The same actions are available as `:Sqlgym run|next|answer|redo`. The keys use

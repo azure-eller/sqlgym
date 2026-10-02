@@ -192,8 +192,15 @@ def test_solving_a_problem(start):
     # Wrong: the verdict, then your output.
     s.type(["select user_id, email", "from users", "where user_id < 4"])
     s.action("r")
-    lines = check(s, s.wait(lambda scr: "Not quite" in scr))
-    assert results_text(lines).lstrip().startswith("✗ Not quite.\n\n   user_id |")
+    lines = check(s, s.wait(lambda scr: "✗ " in scr))
+    assert results_text(lines).lstrip().startswith("✗ Expected 4 columns, got 2.\n\n   user_id |")
+
+    # Zoom shows just the results, and zooming back restores the screen.
+    s.action("z")
+    zoomed = s.wait(lambda scr: "to go back" in scr).split("\n")
+    assert zoomed[0].startswith("─ Results") and "─ Problem" not in "\n".join(zoomed)
+    s.action("z")
+    assert check(s, s.wait(lambda scr: "─ Problem" in scr)) == lines
 
     # Clearing from another pane shrinks the SQL pane back.
     s.keys("C-w", "j")
@@ -218,14 +225,14 @@ def test_long_problem_and_query_at_small_and_large_sizes(start, size):
     s.type([f"select {n} as n union all" for n in range(14)] + ["select 99 as n"])
     check(s, s.wait(lambda scr: "select 99" in scr))
     s.action("r")
-    check(s, s.wait(lambda scr: "Not quite" in scr))
+    check(s, s.wait(lambda scr: "✗ " in scr))
 
 
 def test_resizing_away_and_back_restores_the_screen(start):
     s = start(4)
     s.type(["select facid, name", "from cd.facilities"])
     s.action("r")
-    before = check(s, s.wait(lambda scr: "Not quite" in scr))
+    before = check(s, s.wait(lambda scr: "✗ " in scr))
     for width, height in [(80, 24), (160, 50), (100, 40)]:
         s.resize(width, height)
         check(s, s.wait())

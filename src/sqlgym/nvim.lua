@@ -111,6 +111,7 @@ local ACTIONS = {
   { "n", M.next, "next problem" },
   { "R", M.redo, "redo (clear your SQL)" },
   { "a", M.answer, "show answer" },
+  { "z", function() M.zoom() end, "zoom results (again to go back)" },
 }
 
 local function map_keys(buf)
@@ -236,9 +237,12 @@ end
 -- the command line and the two blank separators between panes. Worked out
 -- from the screen rather than the panes' current heights, which can be off
 -- for a moment (e.g. while a message briefly takes a row).
+local function tabline_rows()
+  return (vim.o.showtabline == 2 or (vim.o.showtabline == 1 and #vim.api.nvim_list_tabpages() > 1)) and 1 or 0
+end
+
 local function shared_rows()
-  local tabline = (vim.o.showtabline == 2 or (vim.o.showtabline == 1 and #vim.api.nvim_list_tabpages() > 1)) and 1 or 0
-  return vim.o.lines - tabline - 1 - vim.o.cmdheight - 2
+  return vim.o.lines - tabline_rows() - 1 - vim.o.cmdheight - 2
 end
 
 -- Size each pane to its content: the problem and your SQL get
@@ -330,6 +334,46 @@ style_sql_pane = function()
   pane_options(S.wins.sql, { winbar = bar("SQL", key("r") .. " to run"), scrolloff = 0, wrap = false })
 end
 
+-- Zoom: the results over the whole screen, to read and scroll a big table.
+-- A window floating over the panes, so closing it leaves them as they were.
+local function zoom_config()
+  -- Down to the status line: the panes' rows plus the two blank separators.
+  return { relative = "editor", row = tabline_rows(), col = 0, width = vim.o.columns, height = shared_rows() + 2 }
+end
+
+function M.zoom()
+  if valid(S.zoom) then
+    vim.api.nvim_win_close(S.zoom, true)
+    return
+  end
+  S.zoom = vim.api.nvim_open_win(S.results_buf, true, vim.tbl_extend("force", zoom_config(), { zindex = 40 }))
+  pane_options(S.zoom, { wrap = false, winbar = bar("Results", key("z") .. " to go back") })
+  -- Leaving it any way (<leader>z, :q, <C-w>w) closes it and returns to your SQL.
+  vim.api.nvim_create_autocmd("WinClosed", {
+    pattern = tostring(S.zoom),
+    once = true,
+    callback = function()
+      S.zoom = nil
+      vim.schedule(function()
+        if valid(S.wins.sql) then
+          vim.api.nvim_set_current_win(S.wins.sql)
+        end
+      end)
+    end,
+  })
+  vim.api.nvim_create_autocmd("WinLeave", {
+    once = true,
+    callback = function()
+      local win = S.zoom
+      vim.schedule(function()
+        if valid(win) then
+          vim.api.nvim_win_close(win, true)
+        end
+      end)
+    end,
+  })
+end
+
 function M.start(opts)
   S.opts = opts
   -- One status line at the bottom rather than one per pane. (This nvim runs
@@ -359,7 +403,7 @@ function M.start(opts)
   vim.cmd("rightbelow split")
   S.wins.results = vim.api.nvim_get_current_win()
   vim.api.nvim_win_set_buf(S.wins.results, S.results_buf)
-  pane_options(S.wins.results, { wrap = false, winbar = bar("Results") })
+  pane_options(S.wins.results, { wrap = false, winbar = bar("Results", key("z") .. " to zoom") })
 
   vim.api.nvim_set_current_win(S.wins.sql)
   fit()
@@ -382,6 +426,9 @@ function M.start(opts)
     callback = function()
       fit()
       rewrap()
+      if valid(S.zoom) then
+        vim.api.nvim_win_set_config(S.zoom, zoom_config())
+      end
     end,
   })
   -- :q / :wq in any pane saves your SQL and closes all three, so nvim exits.

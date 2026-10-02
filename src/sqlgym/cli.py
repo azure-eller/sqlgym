@@ -19,7 +19,7 @@ from rich.markup import escape
 from rich.table import Table
 
 from sqlgym import db, problems, table
-from sqlgym.compare import matches
+from sqlgym.compare import difference
 
 console = Console(highlight=False)
 MAX_ROWS = 50  # rows shown before truncating a result table
@@ -137,12 +137,12 @@ def cmd_check(file: Path) -> int:
         return SQL_ERROR
 
     expected = db.run(db.fresh_db(problem.setup_sql), problem.solution_sql)
-    passed = matches(yours.rows, expected.rows, problem.ordered)
-    if passed:
+    wrong = difference(yours, expected, problem.ordered)
+    if not wrong:
         problems.mark(problem, "solved")
-    print("✓ Correct.\n" if passed else "✗ Not quite.\n")
+    print(f"✗ {wrong}\n" if wrong else "✓ Correct.\n")
     print_result(yours.columns, yours.rows)
-    return PASSED if passed else FAILED
+    return FAILED if wrong else PASSED
 
 
 def print_result(columns: list[str], rows: list[tuple]) -> None:
