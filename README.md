@@ -2,10 +2,12 @@
 
 Practice SQL interview problems from the terminal, in your editor, against DuckDB.
 
+![sqlgym: a wrong answer, a hint, then the right one](demo/sqlgym.gif)
+
 Needs [Neovim](https://neovim.io) 0.10+ and [uv](https://docs.astral.sh/uv/).
 
 ```sh
-uv tool install .
+uv tool install git+https://github.com/azure-eller/sqlgym
 sqlgym               # open the next unsolved problem
 sqlgym open 107      # open a specific problem
 sqlgym list          # all problems and your progress
