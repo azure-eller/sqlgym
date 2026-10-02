@@ -3,6 +3,7 @@ name = "sqlgym"
 version = "0.1.0"
 description = "Practice SQL interview problems from the terminal"
 readme = "README.md"
+license = "MIT"
 authors = [
     { name = "Azure Eller", email = "azureller1@gmail.com" }
 ]
